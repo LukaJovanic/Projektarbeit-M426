@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "mDwbG1jS994=",
+  "dgSpecHash": "1/o2DpNfHFg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\janwy\\Projektarbeit-M426\\Backend\\Projektarbeit_M426\\Projektarbeit_M426\\Projektarbeit_M426.csproj",
+  "projectFilePath": "C:\\Projektarbeit_M426\\Backend\\Projektarbeit_M426\\Projektarbeit_M426\\Projektarbeit_M426.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\janwy\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.2\\microsoft.aspnetcore.openapi.9.0.2.nupkg.sha512",
-    "C:\\Users\\janwy\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+    "C:\\Users\\Luka Jovanic\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.2\\microsoft.aspnetcore.openapi.9.0.2.nupkg.sha512",
+    "C:\\Users\\Luka Jovanic\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
   ],
   "logs": []
 }
