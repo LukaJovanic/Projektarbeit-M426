@@ -105,16 +105,4 @@ Ziel: Benutzer können Fahrzeuge inserieren, suchen und verwalten.
 
 ---
 
-# Weekly 16.02.2026
-
-## Ziele für heute
-
-- Methode finden
-- Login entwickeln
-
-## Welche Methoden werden wir benutzen für unser Projekt?
-
--Design thinking
--
-
-## Unsere Ziele 
+### US7 - 
