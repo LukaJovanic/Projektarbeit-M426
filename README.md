@@ -114,7 +114,107 @@ Ziel: Benutzer können Fahrzeuge inserieren, suchen und verwalten.
 
 ## Welche Methoden werden wir benutzen für unser Projekt?
 
--Design thinking
+- Design thinking
 -
 
 ## Unsere Ziele 
+
+
+## Gherkin
+
+---
+
+## Gherkin – Akzeptanztests
+
+Gherkin wird verwendet, um Anforderungen in einem klaren Format zu definieren.
+
+### Struktur
+
+- **Given** – Ausgangszustand
+- **When** – Aktion des Nutzers
+- **Then** – Erwartetes Ergebnis
+
+---
+
+## Login
+
+### Positiv-Szenario
+
+**Given:** Ich bin auf der Login-Seite und habe ein gültiges Konto.  
+**When:** Ich gebe meine E-Mail und mein Passwort korrekt ein und klicke auf "Login".  
+**Then:** Ich werde auf das Dashboard weitergeleitet.
+
+### Negativ-Szenario
+
+**Given:** Ich bin auf der Login-Seite.  
+**When:** Ich gebe ein falsches Passwort ein.  
+**Then:** Ich sehe eine Fehlermeldung und bleibe auf der Seite.
+
+---
+
+## Registrierung
+
+**Given:** Ich bin auf der Registrierungsseite.  
+**When:** Ich gebe eine E-Mail und ein Passwort ein und klicke auf "Registrieren".  
+**Then:** Ein Benutzer wird in der Datenbank erstellt.
+
+---
+
+## Fahrzeuge suchen
+
+**Given:** Ich bin auf der Suchseite.  
+**When:** Ich wähle eine Marke oder ein Modell aus.  
+**Then:** Es werden passende Fahrzeuge angezeigt.
+
+---
+
+## Inserat erstellen
+
+**Given:** Ich bin als Benutzer eingeloggt.  
+**When:** Ich gebe Marke, Modell, Preis und Kilometerstand ein und speichere das Inserat.  
+**Then:** Das Inserat wird in der Datenbank gespeichert und angezeigt.
+
+---
+
+## Release Ziel
+
+- Einfaches **MVP der Webapplikation**
+- Benutzer können sich **registrieren und einloggen**
+- Benutzer können **Fahrzeuge suchen**
+- Benutzer können **Inserate erstellen**
+
+## 4. Definition of Done (DoD)
+
+### Eine Story gilt als abgeschlossen wenn:
+
+- Funktion implementiert ist
+- Daten korrekt in der Datenbank gespeichert werden
+- Akzeptanzkriterien erfüllt sind
+- Code im Repository gespeichert ist
+- README Dokumentation aktualisiert wurde
+
+---
+
+## Synergie mit M165 (CRUD & Datenbank)
+
+Im Sprint 1 werden die ersten CRUD Operationen implementiert.
+
+### Create
+- Benutzer registrieren
+- Fahrzeug inserieren
+
+### Read
+- Fahrzeuge anzeigen
+- Benutzer laden
+
+### Update
+- Wird in späteren Sprints umgesetzt
+
+### Delete
+- Wird in späteren Sprints umgesetzt
+
+### Zusätzlich:
+
+- Verbindung zur Datenbank herstellen
+- Validierung der Datenmodelle
+- 
