@@ -217,7 +217,44 @@ Im Sprint 1 werden die ersten CRUD Operationen implementiert.
 
 - Verbindung zur Datenbank herstellen
 - Validierung der Datenmodelle
-- 
-=======
-### US7 - 
->>>>>>> b521de562ed8a033f7d1880f9a3972cf9854c903
+
+# Sprint 1 Retrospektive
+
+## Ziel der Retrospektive
+
+Reflexion der Zusammenarbeit im Team und Identifikation von Verbesserungen für den nächsten Sprint.
+
+---
+
+## Was lief gut (Continue)
+
+- Die Rollen im Team waren klar verteilt (Entwicklung, Scrum Master, Dokumentation).
+- User Stories wurden früh definiert.
+- Akzeptanzkriterien wurden für die wichtigsten Funktionen erstellt.
+- Die Zusammenarbeit im Team war konstruktiv.
+- Die technische Basis der Applikation konnte erfolgreich umgesetzt werden.
+
+---
+
+## Was lief nicht optimal (Stop)
+
+- Einige Aufgaben waren am Anfang nicht klar genug definiert.
+- Die Aufteilung der Tasks hätte früher gemacht werden können.
+- Kommunikation über den Fortschritt hätte regelmässiger stattfinden können.
+
+---
+
+## Was wollen wir verbessern (Start)
+
+- Tasks im Sprint genauer definieren.
+- Regelmässig den Fortschritt im Team besprechen.
+- Früher mit der Implementierung beginnen.
+- Dokumentation parallel zur Entwicklung aktualisieren.
+
+---
+
+## Massnahmen für Sprint 2
+
+- Klarere Task-Aufteilung zu Beginn des Sprints.
+- Regelmässige kurze Abstimmungen im Team.
+- Fortschritt im Repository oder Taskboard festhalten.
