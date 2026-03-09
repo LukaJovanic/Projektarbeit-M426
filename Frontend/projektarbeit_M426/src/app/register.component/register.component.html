@@ -1,0 +1,235 @@
+<!-- register.component.html -->
+<div class="min-h-screen bg-slate-950 text-slate-100">
+  <!-- Top bar / brand -->
+  <div class="border-b border-slate-800/70">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
+      <div class="flex items-center gap-3">
+        <div class="h-10 w-10 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-600 shadow-lg shadow-orange-600/20"></div>
+        <div>
+          <div class="text-lg font-semibold tracking-tight">MotoScout</div>
+          <div class="text-xs text-slate-400">Create your account</div>
+        </div>
+      </div>
+      <a class="text-sm text-slate-300 hover:text-white" routerLink="/login">Already have an account?</a>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 py-10 md:grid-cols-2 md:py-14">
+    <!-- Left: Promo panel -->
+    <div class="rounded-3xl border border-slate-800/70 bg-gradient-to-b from-slate-900 to-slate-950 p-7 shadow-xl shadow-black/30">
+      <div class="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 text-xs text-slate-300">
+        <span class="h-2 w-2 rounded-full bg-amber-400"></span>
+        Fast • Secure • Built for riders
+      </div>
+
+      <h1 class="mt-4 text-3xl font-semibold leading-tight tracking-tight">
+        Join MotoScout and find your next ride.
+      </h1>
+      <p class="mt-3 text-sm leading-relaxed text-slate-300">
+        Save searches, compare listings, and get alerts when the right bike pops up.
+      </p>
+
+      <div class="mt-6 grid gap-3">
+        <div class="flex items-start gap-3 rounded-2xl border border-slate-800/60 bg-slate-900/40 p-4">
+          <div class="mt-0.5 h-9 w-9 rounded-2xl bg-amber-500/15 ring-1 ring-amber-500/25"></div>
+          <div>
+            <div class="text-sm font-medium">Smart alerts</div>
+            <div class="text-xs text-slate-400">Get notified when matches appear.</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 rounded-2xl border border-slate-800/60 bg-slate-900/40 p-4">
+          <div class="mt-0.5 h-9 w-9 rounded-2xl bg-orange-500/15 ring-1 ring-orange-500/25"></div>
+          <div>
+            <div class="text-sm font-medium">Compare listings</div>
+            <div class="text-xs text-slate-400">Specs, price, mileage — side by side.</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 rounded-2xl border border-slate-800/60 bg-slate-900/40 p-4">
+          <div class="mt-0.5 h-9 w-9 rounded-2xl bg-sky-500/15 ring-1 ring-sky-500/25"></div>
+          <div>
+            <div class="text-sm font-medium">Secure account</div>
+            <div class="text-xs text-slate-400">Stronger passwords, safer browsing.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Register card -->
+    <div class="rounded-3xl border border-slate-800/70 bg-slate-900/50 p-7 shadow-xl shadow-black/30">
+      <div class="flex items-center justify-between">
+        <div>
+          <div class="text-xl font-semibold tracking-tight">Create account</div>
+          <div class="mt-1 text-sm text-slate-400">It takes less than a minute.</div>
+        </div>
+        <div class="hidden h-10 w-10 rounded-2xl bg-gradient-to-br from-sky-400 to-indigo-600 shadow-lg shadow-indigo-600/20 md:block"></div>
+      </div>
+
+      <!-- Template-driven: (ngSubmit)="onSubmit()" -->
+      <!-- Reactive forms: [formGroup]="form" (ngSubmit)="onSubmit()" -->
+      <form class="mt-7 space-y-5" (ngSubmit)="onSubmit()" novalidate>
+        <!-- Username -->
+        <div class="space-y-2">
+          <label class="text-sm font-medium text-slate-200" for="username">Username</label>
+          <div class="relative">
+            <input
+              id="username"
+              name="username"
+              type="text"
+              autocomplete="username"
+              required
+              class="w-full rounded-2xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 outline-none ring-0 transition focus:border-amber-500/60 focus:ring-4 focus:ring-amber-500/10"
+              placeholder="e.g. rider_89"
+              [(ngModel)]="username"
+            />
+          </div>
+          <p class="text-xs text-slate-500">Pick something you’ll remember.</p>
+        </div>
+
+        <!-- Password -->
+        <div class="space-y-2">
+          <label class="text-sm font-medium text-slate-200" for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="new-password"
+            required
+            class="w-full rounded-2xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 outline-none transition focus:border-amber-500/60 focus:ring-4 focus:ring-amber-500/10"
+            placeholder="Create a strong password"
+            [(ngModel)]="password"
+            (ngModelChange)="onPasswordChange($event)"
+          />
+
+          <!-- Strength header -->
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-slate-400">Password strength</span>
+
+            <!-- Example: strengthLabel could be "Weak / OK / Strong" -->
+            <span
+              class="text-xs font-medium"
+              [ngClass]="{
+                'text-red-400': strengthScore <= 25,
+                'text-amber-400': strengthScore > 25 && strengthScore <= 60,
+                'text-emerald-400': strengthScore > 60
+              }"
+            >
+              {{ strengthLabel }}
+            </span>
+          </div>
+
+          <!-- Progress bar -->
+          <div class="h-2 w-full overflow-hidden rounded-full bg-slate-800/70">
+            <div
+              class="h-full rounded-full transition-all duration-300"
+              [ngClass]="{
+                'bg-red-500': strengthScore <= 25,
+                'bg-amber-500': strengthScore > 25 && strengthScore <= 60,
+                'bg-emerald-500': strengthScore > 60
+              }"
+              [style.width.%]="strengthScore"
+            ></div>
+          </div>
+
+          <!-- Criteria list (optional but feels “pro”) -->
+          <div class="grid gap-2 pt-2 text-xs">
+            <div class="flex items-center justify-between rounded-xl border border-slate-800/60 bg-slate-950/40 px-3 py-2">
+              <span class="text-slate-300">At least 8 characters</span>
+              <span
+                class="rounded-full px-2 py-0.5 text-[11px]"
+                [ngClass]="meetsLen ? 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/20' : 'bg-slate-800/70 text-slate-400 ring-1 ring-slate-700'"
+              >
+                {{ meetsLen ? 'OK' : 'Missing' }}
+              </span>
+            </div>
+
+            <div class="flex items-center justify-between rounded-xl border border-slate-800/60 bg-slate-950/40 px-3 py-2">
+              <span class="text-slate-300">Upper + lower case</span>
+              <span
+                class="rounded-full px-2 py-0.5 text-[11px]"
+                [ngClass]="meetsCase ? 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/20' : 'bg-slate-800/70 text-slate-400 ring-1 ring-slate-700'"
+              >
+                {{ meetsCase ? 'OK' : 'Missing' }}
+              </span>
+            </div>
+
+            <div class="flex items-center justify-between rounded-xl border border-slate-800/60 bg-slate-950/40 px-3 py-2">
+              <span class="text-slate-300">Number</span>
+              <span
+                class="rounded-full px-2 py-0.5 text-[11px]"
+                [ngClass]="meetsNumber ? 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/20' : 'bg-slate-800/70 text-slate-400 ring-1 ring-slate-700'"
+              >
+                {{ meetsNumber ? 'OK' : 'Missing' }}
+              </span>
+            </div>
+
+            <div class="flex items-center justify-between rounded-xl border border-slate-800/60 bg-slate-950/40 px-3 py-2">
+              <span class="text-slate-300">Special character</span>
+              <span
+                class="rounded-full px-2 py-0.5 text-[11px]"
+                [ngClass]="meetsSpecial ? 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/20' : 'bg-slate-800/70 text-slate-400 ring-1 ring-slate-700'"
+              >
+                {{ meetsSpecial ? 'OK' : 'Missing' }}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Confirm password -->
+        <div class="space-y-2">
+          <label class="text-sm font-medium text-slate-200" for="confirmPassword">Confirm password</label>
+          <input
+            id="confirmPassword"
+            name="confirmPassword"
+            type="password"
+            autocomplete="new-password"
+            required
+            class="w-full rounded-2xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 outline-none transition focus:border-amber-500/60 focus:ring-4 focus:ring-amber-500/10"
+            placeholder="Repeat your password"
+            [(ngModel)]="confirmPassword"
+          />
+
+          <div
+            class="mt-2 rounded-2xl border px-4 py-3 text-xs"
+            [ngClass]="passwordsMatch
+              ? 'border-emerald-500/20 bg-emerald-500/10 text-emerald-200'
+              : 'border-slate-800/70 bg-slate-950/40 text-slate-400'"
+          >
+            {{ passwordsMatch ? 'Passwords match.' : 'Make sure both passwords are identical.' }}
+          </div>
+        </div>
+
+        <!-- Terms -->
+        <label class="flex items-start gap-3 rounded-2xl border border-slate-800/70 bg-slate-950/40 p-4 text-sm">
+          <input
+            type="checkbox"
+            name="terms"
+            class="mt-1 h-4 w-4 rounded border-slate-700 bg-slate-950 text-amber-500 focus:ring-amber-500/20"
+            [(ngModel)]="acceptedTerms"
+            required
+          />
+          <span class="text-slate-300">
+            I agree to the <a class="text-amber-300 hover:text-amber-200 underline underline-offset-4" routerLink="/terms">Terms</a>
+            and <a class="text-amber-300 hover:text-amber-200 underline underline-offset-4" routerLink="/privacy">Privacy Policy</a>.
+          </span>
+        </label>
+
+        <!-- Submit -->
+        <button
+          type="submit"
+          class="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-amber-500 to-orange-600 px-4 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-orange-600/20 transition hover:brightness-110 focus:outline-none focus:ring-4 focus:ring-amber-500/20 disabled:cursor-not-allowed disabled:opacity-50"
+          [disabled]="!acceptedTerms || !passwordsMatch || strengthScore < 40 || !username"
+        >
+          <span class="relative z-10">Create account</span>
+          <span class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
+            <span class="absolute -left-10 top-0 h-full w-20 rotate-12 bg-white/20 blur-md"></span>
+          </span>
+        </button>
+
+        <p class="text-center text-xs text-slate-500">
+          Tip: A strong password usually means <span class="text-slate-300">12+ chars</span> and not reused anywhere else.
+        </p>
+      </form>
+    </div>
+  </div>
+</div>

@@ -218,3 +218,6 @@ Im Sprint 1 werden die ersten CRUD Operationen implementiert.
 - Verbindung zur Datenbank herstellen
 - Validierung der Datenmodelle
 - 
+=======
+### US7 - 
+>>>>>>> b521de562ed8a033f7d1880f9a3972cf9854c903
