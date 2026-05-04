@@ -17,7 +17,7 @@ type StrengthLabel = 'Weak' | 'Okay' | 'Strong';
   ]
 })
 export class RegisterComponent {
-  username = '';
+  email = '';
   password = '';
   confirmPassword = '';
   acceptedTerms = false;
@@ -44,13 +44,13 @@ constructor(private http: HttpClient, private router: Router) {
 
   onSubmit(): void {
 
-    if (!this.username.trim()) return;
+    if (!this.email.trim()) return;
     if (!this.acceptedTerms) return;
     if (!this.passwordsMatch) return;
     if (this.strengthScore < 40) return;
 
     const payload = {
-      username: this.username.trim(),
+      email: this.email.trim(),
       password: this.password,
     };
 
@@ -110,7 +110,7 @@ constructor(private http: HttpClient, private router: Router) {
     const maxRepeatRun = this.maxRunLength(p);
     if (maxRepeatRun >= 4) penalty += Math.min(20, (maxRepeatRun - 3) * 5);
 
-    const u = this.username.trim().toLowerCase();
+    const u = this.email.trim().toLowerCase();
     if (u && u.length >= 3 && lower.includes(u)) penalty += 15;
 
     if (p.length < 6) penalty += 20;
