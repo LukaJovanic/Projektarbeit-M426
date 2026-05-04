@@ -1,7 +1,10 @@
 
-import { Component } from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {NgClass} from '@angular/common';
+import {HttpClient} from '@angular/common/http';
+import {apiUrl} from '../../environment/environement';
+import {Router} from '@angular/router';
 
 type StrengthLabel = 'Weak' | 'Okay' | 'Strong';
 
@@ -26,6 +29,9 @@ export class RegisterComponent {
 
   strengthScore = 0;
   strengthLabel: StrengthLabel = 'Weak';
+  apiUrl = apiUrl;
+constructor(private http: HttpClient, private router: Router) {
+}
 
   get passwordsMatch(): boolean {
     return !!this.password && this.password === this.confirmPassword;
@@ -47,6 +53,14 @@ export class RegisterComponent {
       username: this.username.trim(),
       password: this.password,
     };
+
+    this.http.post<{success: boolean, message: string}>(`${this.apiUrl}/login`, payload).subscribe({
+      next: response => {
+        if (response.success) {
+          this.router.navigate(['login'])
+        }
+      }
+    })
 
     console.log('Register submit', payload);
   }
