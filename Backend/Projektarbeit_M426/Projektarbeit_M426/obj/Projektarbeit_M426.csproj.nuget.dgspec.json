@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\janwy\\Projektarbeit-M426\\Backend\\Projektarbeit_M426\\Projektarbeit_M426\\Projektarbeit_M426.csproj": {}
+    "C:\\Projektarbeit_M426\\Backend\\Projektarbeit_M426\\Projektarbeit_M426\\Projektarbeit_M426.csproj": {}
   },
   "projects": {
-    "C:\\Users\\janwy\\Projektarbeit-M426\\Backend\\Projektarbeit_M426\\Projektarbeit_M426\\Projektarbeit_M426.csproj": {
+    "C:\\Projektarbeit_M426\\Backend\\Projektarbeit_M426\\Projektarbeit_M426\\Projektarbeit_M426.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\janwy\\Projektarbeit-M426\\Backend\\Projektarbeit_M426\\Projektarbeit_M426\\Projektarbeit_M426.csproj",
+        "projectUniqueName": "C:\\Projektarbeit_M426\\Backend\\Projektarbeit_M426\\Projektarbeit_M426\\Projektarbeit_M426.csproj",
         "projectName": "Projektarbeit_M426",
-        "projectPath": "C:\\Users\\janwy\\Projektarbeit-M426\\Backend\\Projektarbeit_M426\\Projektarbeit_M426\\Projektarbeit_M426.csproj",
-        "packagesPath": "C:\\Users\\janwy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\janwy\\Projektarbeit-M426\\Backend\\Projektarbeit_M426\\Projektarbeit_M426\\obj\\",
+        "projectPath": "C:\\Projektarbeit_M426\\Backend\\Projektarbeit_M426\\Projektarbeit_M426\\Projektarbeit_M426.csproj",
+        "packagesPath": "C:\\Users\\Luka Jovanic\\.nuget\\packages\\",
+        "outputPath": "C:\\Projektarbeit_M426\\Backend\\Projektarbeit_M426\\Projektarbeit_M426\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\janwy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Luka Jovanic\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
