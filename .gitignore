@@ -1,0 +1,109 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# VS Code
+.vscode/
+
+# ASP.NET Core
+appsettings.Development.json
+appsettings.Local.json
+
+# Publish output
+publish/
+wwwroot/dist/
+wwwroot/lib/
+
+# NuGet
+*.nupkg
+packages/
+!packages/build/
+
+# Entity Framework
+*.mdf
+*.ldf
+
+# IIS Express
+/.vs/config/applicationhost.config
+
+# Test Results
+TestResults/
+*.trx
+
+# Coverage
+coverage/
+coverage.xml
+*.coverage
+*.coveragexml
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# Azure
+.publishsettings
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.cache
+
+# npm / frontend tooling
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.*
+
+# Secrets
+secrets.json
+
+# Generated files
+Generated/
+ScaffoldingReadMe.txt
+
+# Database migrations snapshot backups
+*MigrationsBackup*
+
+# Docker
+docker-compose.override.yml
+
+# Local certificates
+*.pfx
+*.pem
+*.key
+
+# BenchmarkDotNet
+BenchmarkDotNet.Artifacts/
+
+# ASP.NET Core user secrets
+secrets/
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
