@@ -67,13 +67,13 @@ builder.Services.AddCors(options =>
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
-
+app.UseStaticFiles();
 // cors aktivieren
 app.UseCors("AllowAll");
 
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseStaticFiles();
+
 
 
 app.MapControllers();

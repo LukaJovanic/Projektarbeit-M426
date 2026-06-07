@@ -1,6 +1,5 @@
 <!-- register.component.html -->
 <div class="min-h-screen bg-slate-950 text-slate-100">
-  <!-- Top bar / brand -->
   <div class="border-b border-slate-800/70">
     <div class="mx-auto flex max-w-5xl items-center justify-between px-4 py-4">
       <div class="flex items-center gap-3">
@@ -14,9 +13,7 @@
     </div>
   </div>
 
-  <!-- Content -->
   <div class="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 py-10 md:grid-cols-2 md:py-14">
-    <!-- Left: Promo panel -->
     <div class="rounded-3xl border border-slate-800/70 bg-gradient-to-b from-slate-900 to-slate-950 p-7 shadow-xl shadow-black/30">
       <div class="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/60 px-3 py-1 text-xs text-slate-300">
         <span class="h-2 w-2 rounded-full bg-amber-400"></span>
@@ -55,7 +52,6 @@
       </div>
     </div>
 
-    <!-- Right: Register card -->
     <div class="rounded-3xl border border-slate-800/70 bg-slate-900/50 p-7 shadow-xl shadow-black/30">
       <div class="flex items-center justify-between">
         <div>
@@ -65,27 +61,35 @@
         <div class="hidden h-10 w-10 rounded-2xl bg-gradient-to-br from-sky-400 to-indigo-600 shadow-lg shadow-indigo-600/20 md:block"></div>
       </div>
 
-      <!-- Template-driven: (ngSubmit)="onSubmit()" -->
-      <!-- Reactive forms: [formGroup]="form" (ngSubmit)="onSubmit()" -->
       <form class="mt-7 space-y-5" (ngSubmit)="onSubmit()" novalidate>
         <div class="space-y-2">
-          <label class="text-sm font-medium text-slate-200" for="email">Email</label>
-          <div class="relative">
-            <input
-              id="email"
-              name="email"
-              type="text"
-              autocomplete="email"
-              required
-              class="w-full rounded-2xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 outline-none ring-0 transition focus:border-amber-500/60 focus:ring-4 focus:ring-amber-500/10"
-              placeholder="e.g. rider_89"
-              [(ngModel)]="email"
-            />
-          </div>
-          <p class="text-xs text-slate-500">Pick something you’ll remember.</p>
+          <label class="text-sm font-medium text-slate-200" for="username">Username</label>
+          <input
+            id="username"
+            name="username"
+            type="text"
+            autocomplete="username"
+            required
+            class="w-full rounded-2xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 outline-none ring-0 transition focus:border-amber-500/60 focus:ring-4 focus:ring-amber-500/10"
+            placeholder="e.g. rider_89"
+            [(ngModel)]="username"
+          />
         </div>
 
-        <!-- Password -->
+        <div class="space-y-2">
+          <label class="text-sm font-medium text-slate-200" for="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            class="w-full rounded-2xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 outline-none ring-0 transition focus:border-amber-500/60 focus:ring-4 focus:ring-amber-500/10"
+            placeholder="you@example.com"
+            [(ngModel)]="email"
+          />
+        </div>
+
         <div class="space-y-2">
           <label class="text-sm font-medium text-slate-200" for="password">Password</label>
           <input
@@ -100,11 +104,8 @@
             (ngModelChange)="onPasswordChange($event)"
           />
 
-          <!-- Strength header -->
           <div class="flex items-center justify-between">
             <span class="text-xs text-slate-400">Password strength</span>
-
-            <!-- Example: strengthLabel could be "Weak / OK / Strong" -->
             <span
               class="text-xs font-medium"
               [ngClass]="{
@@ -117,7 +118,6 @@
             </span>
           </div>
 
-          <!-- Progress bar -->
           <div class="h-2 w-full overflow-hidden rounded-full bg-slate-800/70">
             <div
               class="h-full rounded-full transition-all duration-300"
@@ -129,52 +129,8 @@
               [style.width.%]="strengthScore"
             ></div>
           </div>
-
-          <!-- Criteria list (optional but feels “pro”) -->
-          <div class="grid gap-2 pt-2 text-xs">
-            <div class="flex items-center justify-between rounded-xl border border-slate-800/60 bg-slate-950/40 px-3 py-2">
-              <span class="text-slate-300">At least 8 characters</span>
-              <span
-                class="rounded-full px-2 py-0.5 text-[11px]"
-                [ngClass]="meetsLen ? 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/20' : 'bg-slate-800/70 text-slate-400 ring-1 ring-slate-700'"
-              >
-                {{ meetsLen ? 'OK' : 'Missing' }}
-              </span>
-            </div>
-
-            <div class="flex items-center justify-between rounded-xl border border-slate-800/60 bg-slate-950/40 px-3 py-2">
-              <span class="text-slate-300">Upper + lower case</span>
-              <span
-                class="rounded-full px-2 py-0.5 text-[11px]"
-                [ngClass]="meetsCase ? 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/20' : 'bg-slate-800/70 text-slate-400 ring-1 ring-slate-700'"
-              >
-                {{ meetsCase ? 'OK' : 'Missing' }}
-              </span>
-            </div>
-
-            <div class="flex items-center justify-between rounded-xl border border-slate-800/60 bg-slate-950/40 px-3 py-2">
-              <span class="text-slate-300">Number</span>
-              <span
-                class="rounded-full px-2 py-0.5 text-[11px]"
-                [ngClass]="meetsNumber ? 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/20' : 'bg-slate-800/70 text-slate-400 ring-1 ring-slate-700'"
-              >
-                {{ meetsNumber ? 'OK' : 'Missing' }}
-              </span>
-            </div>
-
-            <div class="flex items-center justify-between rounded-xl border border-slate-800/60 bg-slate-950/40 px-3 py-2">
-              <span class="text-slate-300">Special character</span>
-              <span
-                class="rounded-full px-2 py-0.5 text-[11px]"
-                [ngClass]="meetsSpecial ? 'bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-500/20' : 'bg-slate-800/70 text-slate-400 ring-1 ring-slate-700'"
-              >
-                {{ meetsSpecial ? 'OK' : 'Missing' }}
-              </span>
-            </div>
-          </div>
         </div>
 
-        <!-- Confirm password -->
         <div class="space-y-2">
           <label class="text-sm font-medium text-slate-200" for="confirmPassword">Confirm password</label>
           <input
@@ -198,7 +154,6 @@
           </div>
         </div>
 
-        <!-- Terms -->
         <label class="flex items-start gap-3 rounded-2xl border border-slate-800/70 bg-slate-950/40 p-4 text-sm">
           <input
             type="checkbox"
@@ -208,16 +163,17 @@
             required
           />
           <span class="text-slate-300">
-            I agree to the <a class="text-amber-300 hover:text-amber-200 underline underline-offset-4" routerLink="/terms">Terms</a>
-            and <a class="text-amber-300 hover:text-amber-200 underline underline-offset-4" routerLink="/privacy">Privacy Policy</a>.
+            I agree to the
+            <a class="text-amber-300 hover:text-amber-200 underline underline-offset-4" routerLink="/terms">Terms</a>
+            and
+            <a class="text-amber-300 hover:text-amber-200 underline underline-offset-4" routerLink="/privacy">Privacy Policy</a>.
           </span>
         </label>
 
-        <!-- Submit -->
         <button
           type="submit"
           class="group relative w-full overflow-hidden rounded-2xl bg-gradient-to-r from-amber-500 to-orange-600 px-4 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-orange-600/20 transition hover:brightness-110 focus:outline-none focus:ring-4 focus:ring-amber-500/20 disabled:cursor-not-allowed disabled:opacity-50"
-          [disabled]="!acceptedTerms || !passwordsMatch || strengthScore < 40 || !email"
+          [disabled]="!acceptedTerms || !passwordsMatch || strengthScore < 40 || !username || !email || !password"
         >
           <span class="relative z-10">Create account</span>
           <span class="pointer-events-none absolute inset-0 opacity-0 transition group-hover:opacity-100">
