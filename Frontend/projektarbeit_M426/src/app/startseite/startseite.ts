@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { apiUrl } from '../../environment/environement';
+import {RouterLink} from '@angular/router';
 
 interface Vehicle {
   id?: number;
@@ -18,7 +19,7 @@ interface Vehicle {
 
 @Component({
   selector: 'app-startseite',
-  imports: [CommonModule, FormsModule, NgOptimizedImage],
+  imports: [CommonModule, FormsModule, NgOptimizedImage, RouterLink],
   templateUrl: './startseite.html',
   styleUrl: './startseite.css',
   standalone: true,
