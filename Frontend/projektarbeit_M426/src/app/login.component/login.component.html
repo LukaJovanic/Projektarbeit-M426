@@ -68,9 +68,12 @@
       </div>
 
       <form class="mt-7 space-y-5" (ngSubmit)="onSubmit()" novalidate>
-        <!-- Username / Email -->
+        <!-- Username -->
         <div class="space-y-2">
-          <label class="text-sm font-medium text-slate-200" for="username">Username or email</label>
+          <label class="text-sm font-medium text-slate-200" for="username">
+            Username
+          </label>
+
           <input
             id="username"
             name="username"
@@ -78,7 +81,7 @@
             autocomplete="username"
             required
             class="w-full rounded-2xl border border-slate-800 bg-slate-950/60 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 outline-none transition focus:border-amber-500/60 focus:ring-4 focus:ring-amber-500/10"
-            placeholder="Enter your username or email"
+            placeholder="Enter your username"
             [(ngModel)]="username"
           />
         </div>

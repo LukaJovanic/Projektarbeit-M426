@@ -27,8 +27,9 @@ export class LoginComponent {
     }
 
     const request = {username: this.username, password: this.password};
-    this.http.post<{success: boolean, message: string}>(`${this.apiUrl}/login`, request).subscribe({
+    this.http.post<{success: boolean, message: string}>(`${this.apiUrl}/anmelden`, request).subscribe({
       next: response => {
+        console.log(response);
         if (response.success) {
           this.errorMessage = '';
           this.router.navigate(['startseite'])
