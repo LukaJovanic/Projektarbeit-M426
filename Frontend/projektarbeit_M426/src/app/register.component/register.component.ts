@@ -4,6 +4,7 @@ import { NgClass } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { apiUrl } from '../../environment/environement';
 import { Router } from '@angular/router';
+import {RouterLink} from '@angular/router';
 
 type StrengthLabel = 'Weak' | 'Okay' | 'Strong';
 
@@ -12,7 +13,8 @@ type StrengthLabel = 'Weak' | 'Okay' | 'Strong';
   templateUrl: './register.component.html',
   imports: [
     FormsModule,
-    NgClass
+    NgClass,
+    RouterLink
   ]
 })
 export class RegisterComponent {
