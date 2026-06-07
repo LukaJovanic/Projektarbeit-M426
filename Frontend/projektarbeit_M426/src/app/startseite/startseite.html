@@ -123,6 +123,16 @@
                 <p class="mt-1 font-semibold text-slate-900">{{ vehicle.price | number }} €</p>
               </div>
             </div>
+
+            <div class="mt-5">
+              <a
+                [routerLink]="['/uebersicht']"
+                [state]="{ vehicle: vehicle }"
+                class="inline-flex rounded-2xl bg-slate-900 px-5 py-3 font-semibold text-white transition hover:bg-slate-700"
+              >
+                Zur Übersicht
+              </a>
+            </div>
           </div>
         </div>
       </div>
