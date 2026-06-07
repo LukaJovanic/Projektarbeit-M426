@@ -4,11 +4,12 @@ import {CommonModule} from '@angular/common';
 import {HttpClient} from '@angular/common/http';
 import {apiUrl} from '../../environment/environement';
 import {Router} from '@angular/router';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-login',
   imports: [
-    FormsModule, CommonModule,
+    FormsModule, CommonModule, RouterLink
   ],
   templateUrl: './login.component.html'
 })
